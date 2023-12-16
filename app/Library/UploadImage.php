@@ -17,7 +17,7 @@ class UploadImage
                 Self::$file_name = $filename . '.' . $uploadedFile->getClientOriginalExtension();
             }
 
-            $uploadedFile->storeAs($path, Self::$file_name, 'public');
+            $uploadedFile->storeAs($path, Self::$file_name, ['disk' => 'public']);
 
             return Self::$file_name;
         }
